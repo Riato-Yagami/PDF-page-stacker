@@ -1,4 +1,4 @@
-# PDFMultiplier
+# PDF Page Stacker
 
 PDFMultiplier is a simple and efficient Node.js tool that allows you to:
 - Duplicate pages of existing PDF or image files with flexible multipliers (e.g., doubling, quadrupling).
