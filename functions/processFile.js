@@ -1,17 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 const clc = require('cli-color');
-const { extname, basename, join } = path;
 
-module.exports = (file) => {
-    processFile(file);
+module.exports = async (file) => {
+    await processFile(file);
     return;
 }
 
 async function processFile(file) {
     try {
-        const pdfBuffer = await fun.getPdfBuffer(file)
-        const duplicatedPdfBuffer = await fun.duplicatePdf(pdfBuffer);
+        file.pdfBuffer = await fun.getPdfBuffer(file)
+        const duplicatedPdfBuffer = await fun.duplicatePdf(file);
         fs.writeFileSync(file.outputPath, duplicatedPdfBuffer);
         
         if(config.moveProcessedFile){ // Move processed file
