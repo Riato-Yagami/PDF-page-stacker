@@ -48,7 +48,7 @@ async function duplicatePdfPage(file) {
         dashPhase: 100
     };
     
-    console.log(width,height)
+    // console.log(width,height)
     if (isLandscape) {
         page = duplicatedPdfDoc.addPage([width, height * 2]);
         page.drawPage(embeddedPage, { x: 0, y: height, width: width, height: height });
