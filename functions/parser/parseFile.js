@@ -1,8 +1,8 @@
 const path = require('path');
 const { extname, basename, join } = path;
 
-module.exports = (dir,fileName) => {
-    const file = parseFile(dir,fileName);
+module.exports = (name) => {
+    const file = parseFile(name);
     return file;
 }
 
