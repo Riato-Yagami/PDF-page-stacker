@@ -1,8 +1,13 @@
 module.exports = {
     inputDir : 'files/input',
-    outputDir : 'files/input',
-    // outputDir : 'files/output',
+    // outputDir : 'files/input',
+    outputDir : 'files/output',
     processedDir : 'files/processed',
 
-    moveProcessedFile : true
+    moveProcessedFile : false,
+
+    // A4
+    automaticA4 : true,
+    scale : 0.64,
+    recalculateScale : true
 }

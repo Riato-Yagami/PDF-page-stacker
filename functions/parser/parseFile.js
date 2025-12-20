@@ -15,7 +15,7 @@ function parseFile(name) {
     }
 
     file.nameWithoutExt = basename(name, file.extension)
-    file.multiplier = fun.parseMultiplier(file.nameWithoutExt) * 2;
+    fun.writeMultiplier(file,fun.parseMultiplier(file.nameWithoutExt) * 2)
     file.nameWithoutExt = file.nameWithoutExt.replace(/-x\d+$/, '')
 
     file.outputName = `${file.nameWithoutExt}-x${file.multiplier}.pdf`;

@@ -14,6 +14,7 @@ async function processAllPdfs() {
 
     for (const fileName of files) {
         const file = await fun.parseFile(fileName); // await if parseFile is async
+        
         await fun.processFile(file); // await to ensure each file is processed sequentially
     }
 }

@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 const clc = require('cli-color');
 
 module.exports = async (file) => {
@@ -10,7 +9,15 @@ module.exports = async (file) => {
 async function processFile(file) {
     try {
         file.pdfBuffer = await fun.getPdfBuffer(file)
-        const duplicatedPdfBuffer = await fun.duplicatePdf(file);
+
+        let duplicatedPdfBuffer;
+        
+        if(config.automaticA4){
+            duplicatedPdfBuffer = await fun.multiplyOnA4(file);
+        }else{
+            duplicatedPdfBuffer = await fun.duplicatePdf(file);
+        }
+        
         fs.writeFileSync(file.outputPath, duplicatedPdfBuffer);
         
         if(config.moveProcessedFile){ // Move processed file
