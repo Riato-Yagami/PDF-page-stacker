@@ -9,5 +9,6 @@ module.exports = {
     // A4
     automaticA4 : true,
     scale : 0.64,
+    // scale : 1,
     recalculateScale : true
 }
